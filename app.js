@@ -255,17 +255,13 @@ function animate() {
   c.fillStyle = "rgba(0, 0, 0, 0.1)";
   c.fillRect(0, 0, canvas.width, canvas.height);
   player.draw();
-
   removeParticles();
   calculatePlayerDistanceFromEnemies();
-
   ammo.forEach((bullet) => {
     bullet.update();
-
     ClearMissedEnemiesAndBullets();
   });
 }
-
 function shootOnClick() {
   addEventListener("click", (e) => {
     let radius = 3;
@@ -300,7 +296,6 @@ function ClearMissedEnemiesAndBullets() {
 function restart() {
   if (startgame == false) {
     startgame = true;
-
     setInterval(createTheEnemy, 1000);
   } else {
     setInterval(createTheEnemy, 1000);
@@ -331,6 +326,5 @@ startGAmebtn.addEventListener("click", () => {
 gameOverBtn.addEventListener("click", () => {
   start.style.display = "flex";
 });
-
 shootOnClick();
 reset();
